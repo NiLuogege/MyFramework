@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "MyFramework"
 include ':app'
 include ':java'
+include ':lib'
