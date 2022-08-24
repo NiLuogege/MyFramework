@@ -7,11 +7,11 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/to_debug_node_list"
+        android:id="@+id/btn_get_system_service"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
-        android:text="去DebugNodeListActivity"
+        android:text="获取系统服务"
         android:textColor="@color/black" />
 
 </LinearLayout>
