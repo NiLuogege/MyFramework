@@ -19,15 +19,6 @@ public class utils {
 
             m.setAccessible(true);
             m.invoke(null, "demoService", binderService);
-
-
-//            ReflectMethod m = new ReflectMethod(
-//                    Class.forName("android.os.ServiceManager"),
-//                    "addService",
-//                    String.class,
-//                    IBinder.class
-//                );
-//            m.invoke(null, "demoService", binderService);
         } catch (Exception e) {
             e.printStackTrace();
         }
