@@ -35,9 +35,10 @@ class Client {
     //绑定 启动 远程服务
     fun bindRemoteService(activity: Activity) {
         val intent = Intent()
-        intent.action = "com.niluogege.myframework.prepare.aidl.RemoteService"
-        //设置进程名
-        intent.setPackage("com.example.aidl.server")
+        //需要和 manifast中配置的一样
+        intent.action = "com.niluogege.remoteService"
+        //Service包名 这里的包名是APP包名不是类的包名
+        intent.setPackage("com.niluogege.myframework")
         activity.bindService(intent, connection, Context.BIND_AUTO_CREATE)
     }
 
