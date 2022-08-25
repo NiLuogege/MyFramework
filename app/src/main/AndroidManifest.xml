@@ -23,9 +23,9 @@
             android:exported="true" />
 
         <service
-            android:name=".prepare.aidl.remoteService">
+            android:name=".prepare.aidl.RemoteService">
             <intent-filter>
-                <action android:name="com.niluogege.RemoteService" />
+                <action android:name="com.niluogege.remoteService" />
             </intent-filter>
         </service>
 
