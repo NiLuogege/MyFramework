@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.IBinder
 import android.widget.TextView
 import com.niluogege.myframework.R
+import com.niluogege.myframework.prepare.aidl.Client
 import com.niluogege.myframework.prepare.binder.BinderService
 import com.niluogege.myframework.prepare.binder.utils
 import com.niluogege.myframework.utils.ReflectMethod
@@ -27,7 +28,8 @@ class DebugNodeListActivity : Activity() {
 
         //注入自定义SystemService
         findViewById(R.id.btn_add_custom_system_service).setOnClickListener {
-            utils.regist()
+//            utils.regist()
+            Client().bindRemoteService(this)
         }
 
     }
