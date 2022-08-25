@@ -10,14 +10,15 @@ class RemoteService : Service() {
         const val TAG = "RemoteService"
     }
 
-    override fun onBind(intent: Intent): IBinder {
-        Log.e(TAG,"onBind")
-        return service
-    }
 
     override fun onCreate() {
         super.onCreate()
         Log.e(TAG,"onCreate")
+    }
+
+    override fun onBind(intent: Intent): IBinder {
+        Log.e(TAG,"onBind")
+        return service
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
