@@ -26,6 +26,15 @@ class DebugNodeListActivity : Activity() {
             println("aa=${activityManager.appTasks}")
         }
 
+        //startService
+        findViewById(R.id.btn_start_service).setOnClickListener {
+            val intent = Intent()
+            //需要和 manifast中配置的一样
+            intent.action = "com.niluogege.remoteService"
+            //Service包名 这里的包名是APP包名不是类的包名
+            intent.setPackage("com.niluogege.myframework")
+            startService(intent)
+        }
 
         //bindService
         findViewById(R.id.btn_bind_service).setOnClickListener {
@@ -38,15 +47,7 @@ class DebugNodeListActivity : Activity() {
             Client.unBindRemoteService(this)
         }
 
-        //startService
-        findViewById(R.id.btn_start_service).setOnClickListener {
-            val intent = Intent()
-            //需要和 manifast中配置的一样
-            intent.action = "com.niluogege.remoteService"
-            //Service包名 这里的包名是APP包名不是类的包名
-            intent.setPackage("com.niluogege.myframework")
-            startService(intent)
-        }
+
 
     }
 }
