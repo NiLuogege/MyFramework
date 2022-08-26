@@ -29,7 +29,13 @@ class DebugNodeListActivity : Activity() {
 
         //bindService
         findViewById(R.id.btn_bind_service).setOnClickListener {
-            Client().bindRemoteService(this)
+            Client.bindRemoteService(this)
+        }
+
+
+        //unbindService
+        findViewById(R.id.btn_un_bind_service).setOnClickListener {
+            Client.unBindRemoteService(this)
         }
 
         //startService

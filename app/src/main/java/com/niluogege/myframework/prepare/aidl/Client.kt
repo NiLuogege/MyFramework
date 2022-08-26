@@ -9,12 +9,11 @@ import android.content.Intent
 
 import android.R.attr.name
 import android.content.Context
+import com.niluogege.myframework.utils.LogUtils
 
 
-class Client {
-    companion object {
-        const val TAG = "Client"
-    }
+object Client {
+    const val TAG = "Client"
 
     private val connection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
@@ -31,7 +30,6 @@ class Client {
 
     }
 
-
     //绑定 启动 远程服务
     fun bindRemoteService(activity: Activity) {
         val intent = Intent()
@@ -39,11 +37,12 @@ class Client {
         intent.action = "com.niluogege.remoteService"
         //Service包名 这里的包名是APP包名不是类的包名
         intent.setPackage("com.niluogege.myframework")
-        activity.bindService(intent, connection, Context.BIND_AUTO_CREATE)
+        val isBind = activity.bindService(intent, connection, Context.BIND_AUTO_CREATE)
+        LogUtils.log("isBind=$isBind")
     }
 
     //解绑服务
-    fun unBindRemoteService(activity: Activity){
+    fun unBindRemoteService(activity: Activity) {
         activity.unbindService(connection)
     }
 }

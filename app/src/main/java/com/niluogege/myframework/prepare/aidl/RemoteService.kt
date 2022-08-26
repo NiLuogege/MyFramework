@@ -21,9 +21,19 @@ class RemoteService : Service() {
         return service
     }
 
+    override fun onRebind(intent: Intent?) {
+        Log.e(TAG,"onRebind")
+        super.onRebind(intent)
+    }
+
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.e(TAG,"onStartCommand")
         return super.onStartCommand(intent, flags, startId)
+    }
+
+    override fun onUnbind(intent: Intent?): Boolean {
+        Log.e(TAG,"onUnbind")
+        return true
     }
 
     private val service = object : IAidlInterface.Stub() {
