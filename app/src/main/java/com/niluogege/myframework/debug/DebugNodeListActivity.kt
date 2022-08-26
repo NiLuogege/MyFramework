@@ -3,6 +3,7 @@ package com.niluogege.myframework.debug
 import android.app.Activity
 import android.app.ActivityManager
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.IBinder
 import android.widget.TextView
@@ -26,10 +27,19 @@ class DebugNodeListActivity : Activity() {
         }
 
 
-        //注入自定义SystemService
-        findViewById(R.id.btn_add_custom_system_service).setOnClickListener {
-//            utils.regist()
+        //bindService
+        findViewById(R.id.btn_bind_service).setOnClickListener {
             Client().bindRemoteService(this)
+        }
+
+        //startService
+        findViewById(R.id.btn_start_service).setOnClickListener {
+            val intent = Intent()
+            //需要和 manifast中配置的一样
+            intent.action = "com.niluogege.remoteService"
+            //Service包名 这里的包名是APP包名不是类的包名
+            intent.setPackage("com.niluogege.myframework")
+            startService(intent)
         }
 
     }

@@ -21,11 +21,19 @@
             android:textColor="@color/black" />'
 
         <Button
-            android:id="@+id/btn_add_custom_system_service"
+            android:id="@+id/btn_bind_service"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="8dp"
-            android:text="注入自定义SystemService"
+            android:text="bindService 调用"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btn_start_service"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="startService 调用"
             android:textColor="@color/black" />
 
     </LinearLayout>
