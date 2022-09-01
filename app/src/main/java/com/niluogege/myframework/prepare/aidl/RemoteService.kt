@@ -48,6 +48,10 @@ class RemoteService : Service() {
             return "Int=$anInt Long=$aLong Boolean=$aBoolean Float=$aFloat Double=$aDouble String=$aString "
         }
 
+        override fun method2() {
+            println("dfaasdfsd")
+        }
+
 
     }
 }

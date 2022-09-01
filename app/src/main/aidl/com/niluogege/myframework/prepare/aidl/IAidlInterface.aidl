@@ -10,4 +10,5 @@ interface IAidlInterface {
      */
     String basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
             double aDouble, String aString);
+    void method2();
 }
