@@ -44,5 +44,21 @@
             android:text="startService 调用"
             android:textColor="@color/black" />
 
+        <Button
+            android:id="@+id/btn_sm_add_serivce"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="调用 sm addService 添加服务"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btn_sm_get_serivce"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="调用 sm getService 获取服务"
+            android:textColor="@color/black" />
+
     </LinearLayout>
 </ScrollView>
