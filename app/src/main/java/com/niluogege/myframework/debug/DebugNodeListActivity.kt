@@ -76,6 +76,10 @@ class DebugNodeListActivity : Activity() {
         }
 
 
+        findViewById(R.id.btn_sm_get_serivce).setOnClickListener {
+           //反射 Process.start方法 应该是可以的。
+        }
+
 
     }
 }

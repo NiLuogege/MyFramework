@@ -60,5 +60,14 @@
             android:text="调用 sm getService 获取服务"
             android:textColor="@color/black" />
 
+
+        <Button
+            android:id="@+id/btn_start_process"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="反射启动一个进程"
+            android:textColor="@color/black" />
+
     </LinearLayout>
 </ScrollView>
