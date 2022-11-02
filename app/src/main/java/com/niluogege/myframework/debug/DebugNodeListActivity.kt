@@ -21,6 +21,8 @@ import com.niluogege.myframework.utils.ReflectUtil
 class DebugNodeListActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        android.util.Log.e("DebugNodeListActivity","onCreate")
+
         setContentView(R.layout.activity_debug_node_list)
 
         //获取服务流程

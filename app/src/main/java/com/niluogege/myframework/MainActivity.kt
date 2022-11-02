@@ -15,7 +15,8 @@ class MainActivity : Activity() {
 
         findViewById(R.id.to_debug_node_list).setOnClickListener {
             val intent = Intent(this, DebugNodeListActivity::class.java)
-            startActivity(intent)
+//            startActivity(intent)
+            startActivityForResult(intent,100)
         }
     }
 
@@ -28,5 +29,11 @@ class MainActivity : Activity() {
     override fun onStop() {
         super.onStop()
         Log.e("MainActivity111","onStop")
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        Log.e("MainActivity111","onActivityResult")
+
     }
 }
