@@ -2,7 +2,9 @@ package com.niluogege.myframework
 
 import android.app.Activity
 import android.content.Intent
+import android.nfc.Tag
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import com.niluogege.myframework.debug.DebugNodeListActivity
 
@@ -15,5 +17,16 @@ class MainActivity : Activity() {
             val intent = Intent(this, DebugNodeListActivity::class.java)
             startActivity(intent)
         }
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+        Log.e("MainActivity111","onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.e("MainActivity111","onStop")
     }
 }
