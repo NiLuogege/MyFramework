@@ -6,6 +6,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
+        Thread.sleep(2000)
 
     }
 }
