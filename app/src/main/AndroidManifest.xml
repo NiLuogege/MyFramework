@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.niluogege.myframework">
 
+
+    <!--    关闭硬件加速-->
+    <!--    android:hardwareAccelerated="false"-->
+
     <application
         android:name=".App"
         android:allowBackup="true"

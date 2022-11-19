@@ -4,7 +4,9 @@ import android.app.Activity
 import android.content.Intent
 import android.nfc.Tag
 import android.os.Bundle
+import android.os.SystemClock
 import android.util.Log
+import android.view.Choreographer
 import android.widget.TextView
 import com.niluogege.myframework.debug.DebugNodeListActivity
 
@@ -16,24 +18,36 @@ class MainActivity : Activity() {
         findViewById(R.id.to_debug_node_list).setOnClickListener {
             val intent = Intent(this, DebugNodeListActivity::class.java)
 //            startActivity(intent)
-            startActivityForResult(intent,100)
+            startActivityForResult(intent, 100)
+        }
+
+        testVsync()
+
+
+    }
+
+    private fun testVsync() {
+        //这玩意儿运行在主线程，会阻塞主线程
+        Choreographer.getInstance().postFrameCallback { frameTimeNanos ->
+            Log.e("MainActivity111", "收到vsync信号了 frameTimeNanos->$frameTimeNanos")
+            testVsync()
         }
     }
 
 
     override fun onPause() {
         super.onPause()
-        Log.e("MainActivity111","onPause")
+        Log.e("MainActivity111", "onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.e("MainActivity111","onStop")
+        Log.e("MainActivity111", "onStop")
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        Log.e("MainActivity111","onActivityResult")
+        Log.e("MainActivity111", "onActivityResult")
 
     }
 }
