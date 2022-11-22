@@ -21,7 +21,13 @@ class MainActivity : Activity() {
             startActivityForResult(intent, 100)
         }
 
-        testVsync()
+
+        findViewById(R.id.to_callback_activity).setOnClickListener {
+            val intent = Intent(this, CallbackActivity::class.java)
+            startActivity(intent)
+        }
+
+//        testVsync()
 
 
     }

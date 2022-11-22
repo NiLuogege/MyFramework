@@ -31,6 +31,8 @@
             android:name=".debug.DebugNodeListActivity"
             android:exported="true" />
 
+        <activity android:name=".CallbackActivity" />
+
         <service
             android:name=".prepare.aidl.RemoteService"
             android:process="com.niluogege.myframework.remoteService">
