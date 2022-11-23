@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.IBinder
+import android.view.Window
 import android.widget.TextView
 import android.widget.Toast
 import com.niluogege.myframework.R
@@ -22,6 +23,10 @@ class DebugNodeListActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         android.util.Log.e("DebugNodeListActivity","onCreate")
+
+        //设置window可以滑动消失
+        //或者在 activity的theme中设置 <item name="android:windowNoTitle">false</item>
+        requestWindowFeature(Window.FEATURE_SWIPE_TO_DISMISS);
 
         setContentView(R.layout.activity_debug_node_list)
 
