@@ -7,4 +7,12 @@
     <style name="start" parent="@android:style/Theme.Light.NoTitleBar">
         <item name="android:windowBackground">@mipmap/ic_launcher_round</item>
     </style>
+
+    <style name="debugNodeList" parent="@android:style/Theme.Light.NoTitleBar">
+<!--        <item name="android:background">@android:color/transparent</item>-->
+<!--&lt;!&ndash;        这个设置不知道为啥没用&ndash;&gt;-->
+<!--        <item name="android:windowShowWallpaper">true</item>-->
+<!--        <item name="android:windowIsTranslucent">true</item>-->
+<!--        <item name="android:windowDisablePreview">true</item>-->
+    </style>
 </resources>
