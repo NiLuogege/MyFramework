@@ -27,6 +27,14 @@ class MainActivity : Activity() {
             startActivity(intent)
         }
 
+        val pttv = findViewById(R.id.pttv)
+        findViewById(R.id.test_invalidate).setOnClickListener {
+            pttv.invalidate()
+        }
+        findViewById(R.id.test_request_layout).setOnClickListener {
+            pttv.requestLayout()
+        }
+
 //        testVsync()
 
 
