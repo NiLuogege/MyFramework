@@ -39,11 +39,24 @@ public class ViewService extends Service {
 
         View view  =LayoutInflater.from(this).inflate(R.layout.activity_parent,null);
         WindowManager.LayoutParams  lp = new WindowManager.LayoutParams();
+
+
+        //这里需要设置type为 TYPE_SYSTEM_ALERT 而且需要配置并开启 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />权限
+        //否则会报错 Unable to add window -- token null is not valid; is your activity running?
         lp.type=WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+
         lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         WindowManager windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         windowManager.addView(view,lp);
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                windowManager.removeView(view);
+            }
+        });
 
     }
 
