@@ -35,6 +35,10 @@ class MainActivity : Activity() {
             pttv.requestLayout()
         }
 
+        findViewById(R.id.start_view_service).setOnClickListener {
+            startService(Intent(this, ViewService::class.java))
+        }
+
 //        testVsync()
 
 

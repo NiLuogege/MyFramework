@@ -6,6 +6,8 @@
     <!--    关闭硬件加速-->
     <!--    android:hardwareAccelerated="false"-->
 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -33,6 +35,8 @@
             android:exported="true" />
 
         <activity android:name=".CallbackActivity" />
+
+        <service android:name=".ViewService"/>
 
         <service
             android:name=".prepare.aidl.RemoteService"
